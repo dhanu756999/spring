@@ -11,7 +11,7 @@ pipeline {
         stage('Build with Maven') {
             steps {
                 script {
-                    sh 'mvn clean package -DskipTests'
+                    mvn sonar:sonar -Dsonar.host.url=http://98.70.25.240/:9000 -Dsonar.login=admin -Dsonar.password=admin123
                 }
             }
         }
